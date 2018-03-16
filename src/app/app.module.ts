@@ -8,6 +8,8 @@ import { GlobalHeaderComponent } from './global-header/global-header.component';
 import { FooterComponent } from './footer/footer.component';
 import { FlightViewerComponent } from './flight-viewer/flight-viewer.component';
 import { HelpPageComponent } from './help-page/help-page.component';
+import { SearchFlightsLoadComponent } from './search-flights-load/search-flights-load.component';
+import { CheapestFlightsComponent } from './cheapest-flights/cheapest-flights.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { HelpPageComponent } from './help-page/help-page.component';
     GlobalHeaderComponent,
     FooterComponent,
     FlightViewerComponent,
-    HelpPageComponent
+    HelpPageComponent,
+    SearchFlightsLoadComponent,
+    CheapestFlightsComponent
   ],
   imports: [
     BrowserModule,
