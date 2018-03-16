@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { GlobalHeaderComponent } from './global-header/global-header.component';
 import { FooterComponent } from './footer/footer.component';
 import { FlightViewerComponent } from './flight-viewer/flight-viewer.component';
+import { HelpPageComponent } from './help-page/help-page.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { FlightViewerComponent } from './flight-viewer/flight-viewer.component';
     AppComponent,
     GlobalHeaderComponent,
     FooterComponent,
-    FlightViewerComponent
+    FlightViewerComponent,
+    HelpPageComponent
   ],
   imports: [
     BrowserModule,
