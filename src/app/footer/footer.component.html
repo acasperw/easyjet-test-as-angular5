@@ -1,0 +1,10 @@
+<footer>
+  <nav class="container clearfix">
+    <div *ngFor='let menuBlock of footerItems' class="footerCol">
+      <h3>{{menuBlock.title}}</h3>
+      <ul class="menuUl">
+        <li *ngFor='let menuItem of menuBlock.links'><a routerLink='{{menuItem.link}}'>{{menuItem.text}}</a></li>
+      </ul>
+    </div>
+  </nav>
+</footer>

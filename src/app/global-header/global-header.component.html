@@ -1,10 +1,9 @@
 <div [ngClass]="{'header': true, 'expanded': expanded}">
   <div class="container clearfix">
+
     <h2 class="header--logo">
       <a href="./">Easyjet</a>
     </h2>
-
-    {{expanded}}
 
     <button (click)='handleClick()' class="menu-trigger">Open/Close Menu</button>
     <nav class="header--menu">
@@ -12,5 +11,6 @@
         <a routerLink={{menuItem.link}}>{{menuItem.text}}</a>
       </li>
     </nav>
+
   </div>
 </div>

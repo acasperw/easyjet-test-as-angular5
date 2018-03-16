@@ -11,15 +11,15 @@ export class GlobalHeaderComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    this.expanded = true
-  }
-
   expanded;
   menuItems = menuItems;
+
+  ngOnInit() {
+    this.expanded = true;
+  }
 
   handleClick(): void {
     this.expanded = this.expanded ? false : true;
   }
- 
+
 }
