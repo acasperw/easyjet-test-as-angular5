@@ -3,8 +3,6 @@
     <h3>{{data.arrivalAirport}}</h3>
     <div class="flight--departure">From: {{data.departureAirport}}</div>
     <div class="flight--price">£{{data.prices.adult.value}}</div>
-    <button (click)='handleClick()'>See Flight <span class="icon icon-angle-right"></span></button>
-    <!-- <DetailFlightInfo data={this.props.theData} onClick={this._handleClick} /> -->
+    <a routerLink="/flight-detail/{{data.id}}" class='button'>See Flight <span class="icon icon-angle-right"></span></a>
   </div>
-  <div class="dark-overlay" (click)='handleClick()'></div>
 </div>

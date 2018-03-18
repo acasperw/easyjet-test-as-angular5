@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class QuickFlightInfoComponent implements OnInit {
 
   @Input() data: {};
+  @Input() isSearchResult: Boolean;
 
   constructor() { }
 

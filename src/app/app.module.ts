@@ -13,6 +13,7 @@ import { HelpPageComponent } from './help-page/help-page.component';
 import { SearchFlightsLoadComponent } from './search-flights-load/search-flights-load.component';
 import { FlightsService } from './flights.service';
 import { QuickFlightInfoComponent } from './quick-flight-info/quick-flight-info.component';
+import { FlightDetailedViewComponent } from './flight-detailed-view/flight-detailed-view.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { QuickFlightInfoComponent } from './quick-flight-info/quick-flight-info.
     FlightViewerComponent,
     HelpPageComponent,
     SearchFlightsLoadComponent,
-    QuickFlightInfoComponent
+    QuickFlightInfoComponent,
+    FlightDetailedViewComponent
   ],
   imports: [
     BrowserModule,

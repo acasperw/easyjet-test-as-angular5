@@ -18,4 +18,9 @@ export class FlightsService {
     return this.http.get(this.flightsURL);
   }
 
+  getSingleFlight(id: String): Observable<any> {
+    const url = `${this.flightsURL}/${id}`;
+    return this.http.get<any>(url);
+  }
+
 }

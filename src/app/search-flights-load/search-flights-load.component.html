@@ -68,7 +68,7 @@
       <div class="flight-results" *ngIf='flightResultsData && flightResultsData.length > 0'>
         <div class="flight-results--inner">
           <h2><span>Choose a flight out</span></h2>
-          <app-quick-flight-info *ngFor='let singleFlight of flightResultsData' [data]='singleFlight'></app-quick-flight-info>
+          <app-quick-flight-info *ngFor='let singleFlight of flightResultsData' [data]='singleFlight' [isSearchResult]='true'></app-quick-flight-info>
         </div>
       </div>
 
