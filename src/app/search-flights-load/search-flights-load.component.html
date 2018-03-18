@@ -1,3 +1,77 @@
-<p>
-  search-flights-load works!
-</p>
+<div [ngClass]="{'flight-search': true, 'clearfix': true, 'search--expanded': searchExpanded}">
+  <h1 class="header-divider">
+    <span>Book a flight</span>
+  </h1>
+  <div class="flight-search-wrapper">
+    <form (ngSubmit)="onSubmit()" #flightSearchForm="ngForm">
+
+      <div class="form-row-desktop clearfix">
+
+        <div class="form-row">
+          <div class="form--panel">
+            <label for="flightDepart">Going From:</label>
+            <span class="easy-input">
+              <select id="flightDepart" required [(ngModel)]="FlightSearchData.flightDepart" name="flightDepart">
+                <option value="" disabled selected>Select a Departure Airport</option>
+                <option *ngFor="let departs of flightDeparts" [value]="departs.departureAirportCode">{{departs.departureAirport}}</option>
+              </select>
+            </span>
+          </div>
+          <div class="form--panel">
+            <label for="flightArrival">Going To:</label>
+            <span class="easy-input">
+              <select id="flightArrival" [(ngModel)]="FlightSearchData.flightArriv" required name='flightArrival'>
+                <option value="" disabled selected>Select a Destination</option>
+                <option *ngFor="let arrival of flightArrivals" [value]="arrival.arrivalAirportCode">{{arrival.arrivalAirport}}</option>
+              </select>
+            </span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form--panel">
+            <label for="adults">Adults (16+):</label>
+            <span class="easy-input">
+              <input type="number" [(ngModel)]="FlightSearchData.adults" name="adults" required min="1" max="10" pattern="[0-9]*" />
+            </span>
+          </div>
+          <div class="form--panel">
+            <label for="kids">Kids:</label>
+            <span class="easy-input">
+              <input type="number" [(ngModel)]="FlightSearchData.kids" name="kids" min="0" max="10" />
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="form-row-desktop clearfix">
+        <div class="form-row">
+          <div class="form--panel">
+            <label for="flightDateOut">When are you flying out:</label>
+            <span class="easy-input">
+              <input type="date" [(ngModel)]="FlightSearchData.flightDateOut" name="flightDateOut" min="2016-06-29" required />
+            </span>
+          </div>
+          <div class="form--panel">
+            <label for="flightDateReturn">When are you flying back:</label>
+            <span class="easy-input">
+              <input type="date" [(ngModel)]="FlightSearchData.flightDateReturn" name="flightDateReturn" min="2016-07-01" />
+            </span>
+          </div>
+        </div>
+        <div class="form--panel">
+          <input type="submit" class="button" [value]='submitText' [disabled]="!flightSearchForm.form.valid" />
+        </div>
+      </div>
+
+
+      <div class="flight-results" *ngIf='flightResultsData && flightResultsData.length > 0'>
+        <div class="flight-results--inner">
+          <h2><span>Choose a flight out</span></h2>
+          <app-quick-flight-info *ngFor='let singleFlight of flightResultsData' [data]='singleFlight'></app-quick-flight-info>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

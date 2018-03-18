@@ -108,7 +108,8 @@ a {
     }
 }
 
-button, .button {
+button,
+.button {
     display: inline-block;
     padding: 12px 4px;
     margin: 10px 5px 10px 0;
@@ -129,6 +130,10 @@ button, .button {
         text-decoration: none;
         border-color: #17b5f0;
         background-color: #333;
+    }
+    &:disabled {
+        background-color: #666;
+        color: white;
     }
 }
 
