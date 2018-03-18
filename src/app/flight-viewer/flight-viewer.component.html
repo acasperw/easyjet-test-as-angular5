@@ -1,7 +1,12 @@
 <div class="flight-view clearfix">
-  <app-search-flights-load></app-search-flights-load>
-  <div class="cheapestFlights clearfix">
+  <app-search-flights-load [data]="flightData"></app-search-flights-load>
+  
+  <div class="cheapestFlights clearfix" *ngIf='cheapestFlightsData'>
     <h2><span>Our Latest Cheapest Flights</span></h2>
+
+    <div *ngFor='let singleFlight of cheapestFlightsData'>
+      <app-quick-flight-info [data]='singleFlight'></app-quick-flight-info>
+    </div>
   </div>
-  <app-cheapest-flights></app-cheapest-flights>
+
 </div>

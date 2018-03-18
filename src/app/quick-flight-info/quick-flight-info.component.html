@@ -1,0 +1,10 @@
+<div [ngClass]="{'quick-flight--info': true, 'expanded': expanded, 'issearch--result': isSearchResult}">
+  <div class='quick--inner'>
+    <h3>{{data.arrivalAirport}}</h3>
+    <div class="flight--departure">From: {{data.departureAirport}}</div>
+    <div class="flight--price">£{{data.prices.adult.value}}</div>
+    <button (click)='handleClick()'>See Flight <span class="icon icon-angle-right"></span></button>
+    <!-- <DetailFlightInfo data={this.props.theData} onClick={this._handleClick} /> -->
+  </div>
+  <div class="dark-overlay" (click)='handleClick()'></div>
+</div>

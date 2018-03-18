@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -9,7 +10,8 @@ import { FooterComponent } from './footer/footer.component';
 import { FlightViewerComponent } from './flight-viewer/flight-viewer.component';
 import { HelpPageComponent } from './help-page/help-page.component';
 import { SearchFlightsLoadComponent } from './search-flights-load/search-flights-load.component';
-import { CheapestFlightsComponent } from './cheapest-flights/cheapest-flights.component';
+import { FlightsService } from './flights.service';
+import { QuickFlightInfoComponent } from './quick-flight-info/quick-flight-info.component';
 
 
 @NgModule({
@@ -20,13 +22,16 @@ import { CheapestFlightsComponent } from './cheapest-flights/cheapest-flights.co
     FlightViewerComponent,
     HelpPageComponent,
     SearchFlightsLoadComponent,
-    CheapestFlightsComponent
+    QuickFlightInfoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    FlightsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

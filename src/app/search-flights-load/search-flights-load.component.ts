@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-search-flights-load',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-flights-load.component.scss']
 })
 export class SearchFlightsLoadComponent implements OnInit {
+
+  @Input() data: {};
 
   constructor() { }
 
