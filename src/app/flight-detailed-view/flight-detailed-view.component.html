@@ -1,5 +1,38 @@
-<p>
-  flight-detailed-view works!
-</p>
+<div class="detail-flight--info" *ngIf='flight'>
+  <h2>
+    <span>{{flight.arrivalAirport}}</span>
+  </h2>
+  <div class="flight--departure">From: {{flight.departureAirport}} ({{flight.depTerminalName}})</div>
+  <div class="clearfix">
+    <div class="detail-left">
+      <div class="flight--departure-time icon icon-flight">Departing:
+        <span>
+          <b>{{ makeTime(fD.getHours()) + ":" + makeTime(fD.getMinutes())}}</b> {{fD.getDate() + "/" + (fD.getMonth() + 1) +
+          " / "}}
+          <small>{{fD.getFullYear()}}</small>
+        </span>
+      </div>
+    </div>
+    <div class="detail-right">
+      <div class="flight--arrival-time icon icon-flight">Arriving:
+        <span>
+          <b>{{ makeTime(fA.getHours()) + ":" + makeTime(fA.getMinutes())}}</b> {{fA.getDate() + "/" + (fA.getMonth() + 1) +
+          " / "}}
+          <small>{{fA.getFullYear()}}</small>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="flight--price">From: £{{flight.prices.adult.value}}</div>
+  <div class="clearfix">
+    <div class="detail-left">
+      <h3>Adult Price:</h3>£{{flight.prices.adult.valueWithDebitCard}}</div>
+    <div class="detail-right">
+      <h3>Child Price:</h3>£{{flight.prices.child.valueWithDebitCard}}</div>
+  </div>
 
-<pre>{{flight | json}}</pre>
+  <button class="button">Book Now
+    <span class="icon icon-angle-right"></span>
+  </button>
+  <button class="button flight-close-button" (click)='goBack()'>Back</button>
+</div>

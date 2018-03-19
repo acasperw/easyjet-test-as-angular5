@@ -16,12 +16,10 @@
         .quick--inner {
             border: none;
             border-bottom: 1px solid #ddd;
-            text-align: center;
-            // @media @tablet {
-                text-align: left;
-                display: flex;
-                justify-content: space-between;
-            // }
+            text-align: center; // @media @tablet {
+            text-align: left;
+            display: flex;
+            justify-content: space-between; // }
             .quick--inner--section {
                 margin-bottom: 8px;
             }
@@ -42,30 +40,24 @@
     }
     &:nth-child(2) {
         .quick--inner {
-            border-left-width: 0;
-            // @media @tablet {
-                border-width: 1px;
-            // }
+            border-left-width: 0; // @media @tablet {
+            border-width: 1px; // }
         }
     }
     &:nth-child(3) {
         .quick--inner {
             border-left-width: 0;
         }
-    }
-    // @media @tablet {
-        width: 33.33%;
-        &:last-child {
-            display: block;
-        }
-    // }
+    } // @media @tablet {
+    width: 33.33%;
+    &:last-child {
+        display: block;
+    } // }
     .flight--price {
         font-size: 1.25em;
         font-weight: 100;
-        margin-top: 8px;
-        // @media @tablet {
-            font-size: 2.25em;
-        // }
+        margin-top: 8px; // @media @tablet {
+        font-size: 2.25em; // }
     }
     .flight--departure {
         font-size: small;
@@ -83,59 +75,10 @@
     &.message__loading {
         font-size: 1.5em;
     }
-} // Detailed Flight Viewer
-.detail-flight--info,
-.dark-overlay {
-    position: absolute;
-    bottom: 0;
-    top: 100%;
-    opacity: 0;
-    transition: 0.3s opacity;
-}
-
-.dark-overlay {
-    z-index: 100;
-}
-
-.detail-flight--info {
-    z-index: 150;
-    background: white;
-    padding: 20px;
-    text-align: center;
-    h3 {
-        margin-top: 20px;
-    }
-    .detail-left {
-        // @media @desktop {
-            float: left;
-            width: 50%;
-            text-align: center;
-        // }
-    }
-    .detail-right {
-        // @media @desktop {
-            float: right;
-            width: 50%;
-            text-align: center;
-        // }
-    }
-    .button {
-        position: absolute;
-        bottom: 10px;
-        right: 20px;
-        &.flight-close-button {
-            right: auto;
-            left: 20px;
-        }
-    }
-    .flight--price {
-        margin: 20px 0;
-    }
 }
 
 .expanded {
-    .detail-flight--info,
-    .dark-overlay {
+    .detail-flight--info {
         position: fixed;
         opacity: 1;
     }
@@ -156,13 +99,6 @@
         .flight--arrival-time {
             margin-top: 20px;
         }
-    }
-    .dark-overlay {
-        background: rgba(0, 0, 0, 0.7);
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
     }
 }
 

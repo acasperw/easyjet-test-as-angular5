@@ -1,8 +1,31 @@
 <div [ngClass]="{'quick-flight--info': true, 'expanded': expanded, 'issearch--result': isSearchResult}">
-  <div class='quick--inner'>
+
+  <div class="quick--inner clearfix" *ngIf='isSearchResult'>
+    <div class="quick--inner--section">
+      <div class="flight--price">£{{data.prices.adult.value}}</div>
+    </div>
+    <div class="quick--inner--section">
+      <h3>{{data.arrivalAirport}}</h3>
+      <div class="flight--departure">From: {{data.departureAirport}}</div>
+    </div>
+    <div class="quick--inner--section">
+      <div class="flight--departure-time icon icon-flight">Departing: fDfull</div>
+      <div class="flight--arrival-time icon icon-flight">Arriving: fAfull</div>
+    </div>
+    <div class="quick--inner--section">
+      <a class="button" routerLink="/flight-detail/{{data.id}}">See Flight
+        <span class="icon icon-angle-right"></span>
+      </a>
+    </div>
+  </div>
+
+  <div class='quick--inner' *ngIf='!isSearchResult'>
     <h3>{{data.arrivalAirport}}</h3>
     <div class="flight--departure">From: {{data.departureAirport}}</div>
     <div class="flight--price">£{{data.prices.adult.value}}</div>
-    <a routerLink="/flight-detail/{{data.id}}" class='button'>See Flight <span class="icon icon-angle-right"></span></a>
+    <a routerLink="/flight-detail/{{data.id}}" class='button'>See Flight
+      <span class="icon icon-angle-right"></span>
+    </a>
   </div>
+
 </div>

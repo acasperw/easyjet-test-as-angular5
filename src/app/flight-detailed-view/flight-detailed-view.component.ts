@@ -13,6 +13,8 @@ import { FlightsService } from '../flights.service';
 export class FlightDetailedViewComponent implements OnInit {
 
   private flight;
+  private fD;
+  private fA;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,8 +28,21 @@ export class FlightDetailedViewComponent implements OnInit {
 
   getFlight(): void {
     let id = this.route.snapshot.paramMap.get('id');
-    this.flightsService.getSingleFlight(id).subscribe(flight => this.flight = flight);
+    this.flightsService.getSingleFlight(id).subscribe((flight) => {
+      this.flight = flight;
+      this.setData(flight);
+    });
   }
 
+  setData(flight) {
+    this.fD = new Date(flight.localDepartureTime);
+    this.fA = new Date(flight.localArrivalTime);
+  }
+
+  makeTime = (time: Number) => time == 0 ? "00" : time;
+
+  goBack(): void {
+    this.location.back();
+  }
 
 }
