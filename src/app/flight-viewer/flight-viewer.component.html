@@ -1,6 +1,6 @@
 <div class="flight-view clearfix">
   <app-search-flights-load *ngIf='flightData' [data]="flightData"></app-search-flights-load>
-
+  <div *ngIf='loading' class="flights--error-message message__loading"><span class="icon icon-spin5 animate-spin"></span><em>Loading</em></div>
   <div class="cheapestFlights clearfix" *ngIf='cheapestFlightsData'>
     <h2><span>Our Latest Cheapest Flights</span></h2>
     <app-quick-flight-info *ngFor='let singleFlight of cheapestFlightsData' [data]='singleFlight'></app-quick-flight-info>

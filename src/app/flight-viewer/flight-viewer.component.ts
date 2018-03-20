@@ -9,6 +9,7 @@ import { FlightsService } from '../flights.service';
 })
 export class FlightViewerComponent implements OnInit {
 
+  private loading: Boolean;
   flightData: any;
   cheapestFlightsData: {};
 
@@ -16,6 +17,7 @@ export class FlightViewerComponent implements OnInit {
 
   ngOnInit() {
     this.getFlights();
+    this.loading = true;
   }
 
   sortCheapestFlights(flightData: any): void {
@@ -30,6 +32,9 @@ export class FlightViewerComponent implements OnInit {
     this.flightsService.getFlights().subscribe((flightData) => {
       this.flightData = flightData;
       this.sortCheapestFlights(flightData);
+      this.loading = false;
+    }, (err) => {
+      console.log('Error', err);
     });
   }
 

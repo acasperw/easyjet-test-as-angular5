@@ -1,0 +1,9 @@
+@import '~styles.scss';
+.flights--error-message {
+    @extend %xsmall-section;
+    padding-top: 50px;
+    text-align: center;
+    &.message__loading {
+        font-size: 1.5em;
+    }
+}

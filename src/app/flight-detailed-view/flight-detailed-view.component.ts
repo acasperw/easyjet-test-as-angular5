@@ -27,10 +27,12 @@ export class FlightDetailedViewComponent implements OnInit {
   }
 
   getFlight(): void {
-    let id = this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id');
     this.flightsService.getSingleFlight(id).subscribe((flight) => {
       this.flight = flight;
       this.setData(flight);
+    }, (err) => {
+      console.log('Error', err);
     });
   }
 
@@ -39,7 +41,7 @@ export class FlightDetailedViewComponent implements OnInit {
     this.fA = new Date(flight.localArrivalTime);
   }
 
-  makeTime = (time: Number) => time == 0 ? "00" : time;
+  makeTime = (time: Number) => time === 0 ? '00' : time;
 
   goBack(): void {
     this.location.back();
